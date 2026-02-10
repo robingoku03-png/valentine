@@ -236,28 +236,26 @@ function gift4(){
   <div class="container">
     <h2>Us in Every Universe 😙💫</h2>
 
-    <div class="slides" id="slides">
-      <div class="slide">
+    <div class="marvel-scroll">
+      <div class="marvel-item">
          <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDM3bzlmcHA5bjMwZ3p5ajZ6MDFjNDg1MnBrcHQ0Z2lobDRnZjlwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4FOettCbTXpUj6uASx/giphy.gif" alt="us marvel 1">
       </div>
-      <div class="slide">
+      <div class="marvel-item">
         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHY2cmkzaHpmeGYzZ2E2bDdnczYyeG16MzNlamYzbWtlaXd1bGRtYSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DhByPdqgBSPUms4NIW/giphy.gif" alt="us marvel 2">
       </div>
-      <div class="slide">
+      <div class="marvel-item">
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHB4cXdtMzEybHlyODUyMmZpczR0ZHY0cnNwamxhN2c2eW5iM2l4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vlnuSbL956RKjGYMEQ/giphy.gif" alt="us marvel 3">
       </div>
-      <div class="slide">
+      <div class="marvel-item">
         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWJpcnU0bGs4ejl1emFkZnRjem00MndiM3ltNmUyM3B0a2RobWQzcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mmPgxbuPiwCQg/giphy.gif" alt="us marvel 4">
       </div>
     </div>
 
 
-    <div class="dots" id="dots"></div>
+    <p class="sub">← swipe to see more →</p>
 
     <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
-
-  setTimeout(initSlider, 50);
 }
 
 
