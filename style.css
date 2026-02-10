@@ -1,0 +1,276 @@
+:root{
+  --rama:#7bdcb5;
+  --cyan:#4dd0e1;
+  --sky:#81d4fa;
+  --teal:#26a69a;
+  --sunset:#ff9a5b;
+  --bg:rgba(255,255,255,0.95);
+  --deep:#043737;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,var(--rama),var(--cyan),var(--sky),var(--teal));
+  font-family:"Poppins","Segoe UI",sans-serif;
+  padding:14px;
+  overflow:hidden;
+}
+
+#app{
+  width:100%;
+  max-width:420px;
+}
+
+.container{
+  background:var(--bg);
+  border-radius:22px;
+  padding:14px;
+  min-height:78vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  box-shadow:0 16px 40px rgba(0,0,0,0.15);
+}
+
+h2{
+  margin:0;
+  color:var(--deep);
+  text-align:center;
+}
+
+.sub{
+  font-size:14px;
+  color:#00695c;
+  text-align:center;
+}
+
+.gif-box{
+  height:160px;
+}
+
+.gif-box img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  border-radius:16px;
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  width:100%;
+}
+
+button{
+  border:none;
+  border-radius:24px;
+  padding:10px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+button:active{transform:scale(.96)}
+
+.yes{
+  background:linear-gradient(135deg,var(--teal),var(--cyan));
+  color:white;
+  flex:1;
+}
+
+.no{
+  background:linear-gradient(135deg,var(--sky),var(--rama));
+  color:#003d3a;
+  flex:1;
+}
+
+/* SMALL buttons (back / return / next) */
+.small-btn{
+  width:65%;
+  max-width:220px;
+  padding:9px;
+  font-size:13px;
+  background:linear-gradient(135deg,var(--cyan),var(--teal));
+  color:white;
+  margin-top:6px;
+}
+
+/* NEXT square */
+.next-square{
+  width:60px;
+  height:30px;
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--cyan),var(--sunset));
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-weight:700;
+}
+
+/* GIFTS GRID */
+.gifts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  width:100%;
+}
+
+.gift{
+  border-radius:16px;
+  padding:10px;
+  background:linear-gradient(135deg,var(--rama),var(--cyan));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+
+.gift:nth-child(2){background:linear-gradient(135deg,var(--sky),var(--sunset))}
+.gift:nth-child(3){background:linear-gradient(135deg,#f3e8ff,var(--cyan))}
+.gift:nth-child(4){background:linear-gradient(135deg,var(--teal),var(--rama))}
+
+.gift-gif{
+  width:100%;
+  height:90px;
+  border-radius:12px;
+  background:#ffffffaa;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:12px;
+  color:#004d40;
+}
+
+.gift-title{
+  font-weight:600;
+  color:#033;
+}
+
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:22px;
+  animation:floatUp 2.8s linear forwards;
+}
+
+@keyframes floatUp{
+  to{transform:translateY(-110vh);opacity:0}
+  }
+.gif-box{
+  height:160px;   /* sweet spot for mobile */
+}
+/* Make gifts page scroll vertically */
+.gifts-vertical{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* Each gift full-width */
+.gifts-vertical .gift{
+  width:100%;
+}
+
+/* Allow scrolling inside container */
+.scrollable{
+  overflow-y:auto;
+  padding-bottom:70px; /* space for return button */
+}
+
+/* Return button pinned at bottom */
+.return-fixed{
+  position:sticky;
+  bottom:0;
+  margin-top:16px;
+}
+.gift-gif{
+  width:100%;
+  height:140px;        /* ⬅️ increase height */
+  border-radius:14px;
+  overflow:hidden;
+  background:#ffffffaa;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.gift-gif img{
+  width:100%;
+  height:100%;
+  object-fit: cover;   /* 🔥 KEY CHANGE */
+  display:block;
+}
+.gift-text{
+  font-size:16px;
+  line-height:1.5;
+  text-align:center;
+  color:#044;
+  max-width:90%;
+}
+.gift-text{
+  font-size:16px;
+  line-height:1.6;
+  text-align:center;
+  color:#044;
+  max-width:90%;
+  list-style:none;
+  padding:0;
+  margin:0 auto;
+}
+/* SLIDER */
+.slider{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+  border-radius:16px;
+  background:#00000010;
+}
+
+.slides{
+  display:flex;
+  width:100%;
+  height:100%;
+  transition: transform .35s ease;
+}
+
+.slide{
+  min-width:100%;
+  height:100%;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit: cover;   /* 🔥 fits nicely */
+  border-radius:16px;
+}
+
+/* DOTS */
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:8px;
+}
+
+.dots span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#bbb;
+}
+
+.dots span.active{
+  background:#26a69a;
+}
