@@ -280,3 +280,38 @@ button:active{transform:scale(.96)}
 .dots span.active{
   background:#26a69a;
 }
+/* HORIZONTAL SCROLL CONTAINER */
+.marvel-scroll{
+  width:100%;
+  height:220px;
+  display:flex;
+  gap:12px;
+  overflow-x:auto;              /* 👈 enables horizontal scroll */
+  overflow-y:hidden;
+  scroll-snap-type:x mandatory; /* 👈 snap effect */
+  -webkit-overflow-scrolling:touch;
+  border-radius:16px;
+}
+
+/* EACH ITEM */
+.marvel-item{
+  flex:0 0 100%;                /* 👈 one full screen per item */
+  height:100%;
+  scroll-snap-align:center;
+  border-radius:16px;
+  overflow:hidden;
+  background:#00000010;
+}
+
+/* IMAGE FIT */
+.marvel-item img{
+  width:100%;
+  height:100%;
+  object-fit:contain;             /* fills nicely */
+  display:block;
+}
+
+/* hide scrollbar (mobile friendly) */
+.marvel-scroll::-webkit-scrollbar{
+  display:none;
+}
