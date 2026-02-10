@@ -236,7 +236,8 @@ function gift4(){
   <div class="container">
     <h2>Us in Every Universe 😙💫</h2>
 
-    <div class="marvel-scroll">
+    <!-- VERTICAL SCROLL BOX -->
+    <div class="marvel-vertical">
       <div class="marvel-item">
          <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDM3bzlmcHA5bjMwZ3p5ajZ6MDFjNDg1MnBrcHQ0Z2lobDRnZjlwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4FOettCbTXpUj6uASx/giphy.gif" alt="us marvel 1">
       </div>
@@ -252,7 +253,7 @@ function gift4(){
     </div>
 
 
-    <p class="sub">← swipe to see more →</p>
+    <p class="sub">⬇️ scroll down to see more ⬇️</p>
 
     <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
