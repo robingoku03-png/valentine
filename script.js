@@ -257,7 +257,7 @@ function gift4(){
     <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
 
-  initSlider();
+  setTimeout(initSlider, 50);
 }
 
 
@@ -267,12 +267,12 @@ home();
 function initSlider(){
   const slides = document.getElementById("slides");
   const slider = document.getElementById("slider");
-  const total = slides.children.length;
   const dotsWrap = document.getElementById("dots");
 
+  const total = slides.children.length;
   let index = 0;
   let startX = 0;
-  let currentX = 0;
+  let endX = 0;
 
   // Create dots
   dotsWrap.innerHTML = "";
@@ -293,16 +293,14 @@ function initSlider(){
     startX = e.touches[0].clientX;
   });
 
-  slider.addEventListener("touchmove", e=>{
-    currentX = e.touches[0].clientX;
-  });
+  slider.addEventListener("touchend", e=>{
+    endX = e.changedTouches[0].clientX;
 
-  slider.addEventListener("touchend", ()=>{
-    if(startX - currentX > 50 && index < total-1){
-      index++;
-    } else if(currentX - startX > 50 && index > 0){
-      index--;
-    }
+    if(startX - endX > 50 && index < total-1) index++;
+    if(endX - startX > 50 && index > 0) index--;
+
     update();
   });
+
+  update();
 }
