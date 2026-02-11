@@ -12,7 +12,7 @@ const teaseTexts = [
   "Okay now you are pissing me😒"
 ];
 
-function hearts(type,count=8){
+function hearts(type,count=20){
   for(let i=0;i<count;i++){
     const h=document.createElement("div");
     h.className="heart";
@@ -43,7 +43,7 @@ function home(){
 /* ---------- GOOD GIRL ---------- */
 
 function goodGirl(){
-  hearts("yes",10);
+  hearts("yes",20);
   app.innerHTML=`
   <div class="container">
     <h2>That's my goodgirl 😆💕</h2>
@@ -57,9 +57,10 @@ function goodGirl(){
 /* ---------- VALENTINE ---------- */
 
 function valentine(){
-  yesScale=1;
-  teaseIndex=0;
-  app.innerHTML=`
+  yesScale = 1;
+  teaseIndex = 0;
+
+  app.innerHTML = `
   <div class="container">
     <h2>Will you be my forever Valentine?😣🩵💚</h2>
     <p class="sub">i promise many things😭 refer dm that's all ture tho😭🙏🏻
@@ -73,25 +74,36 @@ function valentine(){
     </div>
   </div>`;
 
-  const yes=document.getElementById("yesBtn");
-  const no=document.getElementById("noBtn");
+  const yes = document.getElementById("yesBtn");
+  const no  = document.getElementById("noBtn");
 
   function grow(){
-    yesScale+=0.12;
-    yes.style.transform=`scale(${yesScale})`;
-    no.innerText=teaseTexts[++teaseIndex % teaseTexts.length];
+    // grow YES but keep it INSIDE screen
+    yesScale = Math.min(yesScale + 0.12, 2.2);   // 👈 SAFE LIMIT
+    yes.style.transform = `scale(${yesScale})`;
+
+    // tease text
+    teaseIndex++;
+    no.innerText = teaseTexts[teaseIndex % teaseTexts.length];
+
     hearts("yes",2);
-    if(yesScale>1.8){ no.style.display="none"; }
+
+    // FINAL STATE
+    if(yesScale >= 2.2){
+      no.style.display = "none";     // remove NO
+      yes.style.display = "block";
+      yes.style.margin = "auto";     // center YES
+    }
   }
 
-  no.addEventListener("touchstart",grow);
-  no.addEventListener("mouseenter",grow);
+  no.addEventListener("touchstart", grow);
+  no.addEventListener("mouseenter", grow);
 }
 
 /* ---------- HOW DARE ---------- */
 
 function howDare(){
-  hearts("no",10);
+  hearts("no",20);
   app.innerHTML=`
   <div class="container">
     <h2 style="color:#b71c1c">HOW DARE YOU!</h2>
@@ -105,7 +117,7 @@ function howDare(){
 /* ---------- TRUCK ---------- */
 
 function truck(){
-  hearts("yes",12);
+  hearts("yes",20);
   
   app.innerHTML=`
   <div class="container">
@@ -168,7 +180,7 @@ function gifts(){
 /* ---------- GIFT 1 ---------- */
 
 function gift1(){
-  hearts("yes",10);
+  hearts("yes",20);
   app.innerHTML=`
   <div class="container">
     <h2>Words from my soul(*/ω＼*)</h2>
@@ -182,7 +194,7 @@ function gift1(){
 /* ---------- GIFT 2 ---------- */
 
 function gift2(){
-  hearts("yes",10);
+  hearts("yes",20);
   app.innerHTML=`
   <div class="container">
     <h2>Garden for you 💐</h2>
@@ -199,7 +211,7 @@ function gift2(){
 
 /* ---------- GIFT 3 ---------- */
 function gift3(){
-  hearts("yes",10);
+  hearts("yes",20);
   app.innerHTML=`
   <div class="container">
     <h2>I’M YOUR GIFT (^///^)</h2>
@@ -230,7 +242,7 @@ function gift3(){
 /* ---------- GIFT 4 ---------- */
 
 function gift4(){
-  hearts("yes",10);
+  hearts("yes",20);
   app.innerHTML=`
   <div class="container">
     <h2>Us in Every Universe 😙💫</h2>
