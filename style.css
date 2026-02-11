@@ -421,14 +421,15 @@ button:active{transform:scale(.96)}
   display:flex;
   justify-content:center;
   gap:14px;
+  flex-wrap:wrap;
 }
 
 .yes{
   max-width:85%;
   transition:transform 0.25s ease;
-  will-change:transform;
 }
 
 .no{
   flex-shrink:0;
 }
+
