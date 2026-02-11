@@ -122,7 +122,7 @@ function truck(){
     <div class="gif-box">
       <img src="https://media.giphy.com/media/1wmOyZYoGzz003R03Y/giphy.gif">
     </div>
-    <button class="small-btn" onclick="home()">RESTART</button>
+    <button class="small-btn" onclick="gifts()">NEXT</button>
   </div>`;
 }
 
