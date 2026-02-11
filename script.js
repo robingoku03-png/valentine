@@ -78,12 +78,8 @@ function valentine(){
   const yes = document.getElementById("yesBtn");
   const no  = document.getElementById("noBtn");
 
-  let locked = false;   // prevents auto-trigger
-
   function growYes(){
-    if(locked) return;
-
-    // YES grows but NEVER beyond safe size
+    // grow YES but keep it safe
     yesScale = Math.min(yesScale + 0.12, 1.9);
     yes.style.transform = `scale(${yesScale})`;
 
@@ -92,13 +88,20 @@ function valentine(){
 
     hearts("yes", 2);
 
-    // FINAL STATE
+    // remove NO at the end
     if(yesScale >= 1.9){
-      locked = true;            // stop growth
       no.style.display = "none";
       yes.style.margin = "auto";
     }
   }
+
+  // NO only grows YES
+  no.addEventListener("touchstart", growYes);
+  no.addEventListener("click", growYes);
+
+  // YES ALWAYS WORKS
+  yes.addEventListener("click", truck);
+}
 
   // ONLY NO triggers growth
   no.addEventListener("touchstart", growYes);
