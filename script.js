@@ -12,7 +12,7 @@ const teaseTexts = [
   "Okay now you are pissing me😒"
 ];
 
-function hearts(type,count=20){
+function hearts(type, count = 20){
   for(let i=0;i<count;i++){
     const h=document.createElement("div");
     h.className="heart";
@@ -26,13 +26,12 @@ function hearts(type,count=20){
 /* ---------- HOME ---------- */
 
 function home(){
-  document.body.className = "";   // reset overlays
   app.innerHTML=`
   <div class="container">
     <h2>Oi radha! i made something for you</h2>
     <p class="sub">you wanna see??</p>
     <div class="gif-box">
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVmcXViYW12bWxha2kyMmI1MmNwZW1xcTFwMng5bGVicTliMXBrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10Vrg2NcFDoe2Y/giphy.gif" alt="cute gif">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVmcXViYW12bWxha2kyMmI1MmNwZW1xcTFwMng5bGVicTliMXBrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10Vrg2NcFDoe2Y/giphy.gif">
     </div>
     <div class="buttons">
       <button class="yes" onclick="goodGirl()">YES</button>
@@ -49,7 +48,7 @@ function goodGirl(){
   <div class="container">
     <h2>That's my goodgirl 😆💕</h2>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZDBkcGxlbnlwbngzMHJzcjJlaXQ5OGpubjd5bGp0OXVrOXl5c2wxcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/od5H3PmEG5EVq/giphy.gif" alt="good girl gif">
+      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZDBkcGxlbnlwbngzMHJzcjJlaXQ5OGpubjd5bGp0OXVrOXl5c2wxcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/od5H3PmEG5EVq/giphy.gif">
     </div>
     <div class="next-square" onclick="valentine()">NEXT</div>
   </div>`;
@@ -58,21 +57,18 @@ function goodGirl(){
 /* ---------- VALENTINE ---------- */
 
 function valentine(){
-  let yesScale = 1;
-  let teaseIndex = 0;
+  yesScale = 1;
+  teaseIndex = 0;
 
   app.innerHTML = `
   <div class="container">
     <h2>Will you be my forever Valentine?😣🩵💚</h2>
-
     <p class="sub">
       i promise many things😭 refer dm that's all ture tho😭🙏🏻
     </p>
-
     <div class="gif-box">
       <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDRwZGJ0NGt5eTM5eXZ3Y3h0eDZjaTMxeDJpeng5czV6ZHh4eHUydCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JSxzmyV7AqeABDQKed/giphy.gif">
     </div>
-
     <div class="buttons">
       <button class="yes" id="yesBtn">Yes, forever 💘</button>
       <button class="no" id="noBtn">Noooo 😅</button>
@@ -82,26 +78,20 @@ function valentine(){
   const yes = document.getElementById("yesBtn");
   const no  = document.getElementById("noBtn");
 
-  /* YES → always goes next page */
-  yes.addEventListener("click", function(e){
-    e.stopPropagation();
-    truck();
-  });
+  yes.addEventListener("click", truck);
 
-  /* NO → only grows YES */
   function growYes(){
-    yesScale = Math.min(yesScale + 0.12, 1.9); // SAFE LIMIT
+    yesScale = Math.min(yesScale + 0.12, 1.9);
     yes.style.transform = `scale(${yesScale})`;
 
     teaseIndex++;
     no.innerText = teaseTexts[teaseIndex % teaseTexts.length];
 
-    hearts("yes", 2);
+    hearts("yes",2);
 
-    // FINAL STATE
     if(yesScale >= 1.9){
-      no.style.display = "none";   // remove NO
-      yes.style.margin = "auto";   // center YES
+      no.style.display="none";
+      yes.style.margin="auto";
     }
   }
 
@@ -109,25 +99,6 @@ function valentine(){
   no.addEventListener("touchstart", growYes);
 }
 
-  // NO only grows YES
-  no.addEventListener("touchstart", growYes);
-  no.addEventListener("click", growYes);
-
-  // YES ALWAYS WORKS
-  yes.addEventListener("click", truck);
-}
-
-  // ONLY NO triggers growth
-  no.addEventListener("touchstart", growYes);
-  no.addEventListener("click", growYes);
-
-  // YES ONLY WORKS WHEN USER TAPS IT
-  yes.addEventListener("click", ()=>{
-    if(locked){
-      truck();
-    }
-  });
-}
 
 /* ---------- HOW DARE ---------- */
 
@@ -137,7 +108,7 @@ function howDare(){
   <div class="container">
     <h2 style="color:#b71c1c">HOW DARE YOU!</h2>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExemNudzE1YWp0dXczYnV6dXhzM2pvMGpjZ3o0c282MzZxczIzMzlzNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/UsckMQeJIxpva08C9g/giphy.gif" alt="how dare gif">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExemNudzE1YWp0dXczYnV6dXhzM2pvMGpjZ3o0c282MzZxczIzMzlzNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/UsckMQeJIxpva08C9g/giphy.gif">
     </div>
     <button class="small-btn" onclick="home()">TRY AGAIN</button>
   </div>`;
@@ -145,14 +116,13 @@ function howDare(){
 
 /* ---------- TRUCK ---------- */
 
-function truck(){
+ffunction truck(){
   hearts("yes",20);
-  
   app.innerHTML=`
   <div class="container">
     <h2>HAVING SOMETHING SPEICAL FOR YOU💝</h2>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3anBqZHc3eGY3ZG9iaDQ1aGhxd3RodTF2YzQ3NTNsNmptZTkzbG1ibiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1wmOyZYoGzz003R03Y/giphy.gif" alt="truck of gifts gif">
+      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3anBqZHc3eGY3ZG9iaDQ1aGhxd3RodTF2YzQ3NTNsNmptZTkzbG1ibiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1wmOyZYoGzz003R03Y/giphy.gif">
     </div>
     <button class="small-btn" onclick="gifts()">NEXT</button>
   </div>`;
