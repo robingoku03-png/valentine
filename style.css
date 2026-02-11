@@ -1,441 +1,51 @@
 *{
   box-sizing:border-box;
+  font-family: Arial, sans-serif;
 }
 
 body{
   margin:0;
-  background:#e0f7fa;
   min-height:100vh;
-}
-
-#app{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:black;
-  z-index:10;
-  position:relative;
-}
-:root{
-  --rama:#7bdcb5;
-  --cyan:#4dd0e1;
-  --sky:#81d4fa;
-  --teal:#26a69a;
-  --sunset:#ff9a5b;
-  --bg:rgba(255,255,255,0.95);
-  --deep:#043737;
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  min-height:100vh;
+  background: linear-gradient(135deg,#4dd0e1,#81d4fa,#7bdcb5);
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,var(--rama),var(--cyan),var(--sky),var(--teal));
-  font-family:"Poppins","Segoe UI",sans-serif;
-  padding:14px;
-  overflow:hidden;
 }
 
 #app{
   width:100%;
   max-width:420px;
+  padding:16px;
 }
 
+/* layout */
 .container{
-  background:var(--bg);
-  border-radius:22px;
-  padding:14px;
-  min-height:78vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  box-shadow:0 16px 40px rgba(0,0,0,0.15);
-}
-
-h2{
-  margin:0;
-  color:var(--deep);
+  background:white;
+  border-radius:20px;
+  padding:20px;
   text-align:center;
 }
 
 .sub{
   font-size:14px;
-  color:#00695c;
-  text-align:center;
+  margin-bottom:10px;
 }
 
 .gif-box{
-  height:160px;
+  width:100%;
+  height:180px;
+  border-radius:16px;
+  overflow:hidden;
+  margin:12px 0;
 }
 
 .gif-box img{
   width:100%;
   height:100%;
-  object-fit: contain;
-  border-radius:16px;
+  object-fit:cover;
 }
 
-.buttons{
-  display:flex;
-  gap:10px;
-  width:100%;
-}
-
-button{
-  border:none;
-  border-radius:24px;
-  padding:10px;
-  font-size:14px;
-  font-weight:600;
-  cursor:pointer;
-}
-
-button:active{transform:scale(.96)}
-
-.yes{
-  background:linear-gradient(135deg,var(--teal),var(--cyan));
-  color:white;
-  flex:1;
-}
-
-.no{
-  background:linear-gradient(135deg,var(--sky),var(--rama));
-  color:#003d3a;
-  flex:1;
-}
-
-/* SMALL buttons (back / return / next) */
-.small-btn{
-  width:65%;
-  max-width:220px;
-  padding:9px;
-  font-size:13px;
-  background:linear-gradient(135deg,var(--cyan),var(--teal));
-  color:white;
-  margin-top:6px;
-}
-
-/* NEXT square */
-.next-square{
-  width:60px;
-  height:30px;
-  border-radius:18px;
-  background:linear-gradient(135deg,var(--cyan),var(--sunset));
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  font-weight:700;
-}
-
-/* GIFTS GRID */
-.gifts{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  width:100%;
-}
-
-.gift{
-  border-radius:16px;
-  padding:10px;
-  background:linear-gradient(135deg,var(--rama),var(--cyan));
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-  cursor:pointer;
-}
-
-.gift:nth-child(2){background:linear-gradient(135deg,var(--sky),var(--sunset))}
-.gift:nth-child(3){background:linear-gradient(135deg,#f3e8ff,var(--cyan))}
-.gift:nth-child(4){background:linear-gradient(135deg,var(--teal),var(--rama))}
-
-.gift-gif{
-  width:100%;
-  height:90px;
-  border-radius:12px;
-  background:#ffffffaa;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:12px;
-  color:#004d40;
-}
-
-.gift-title{
-  font-weight:600;
-  color:#033;
-}
-
-.heart{
-  position:fixed;
-  bottom:-20px;
-  font-size:22px;
-  animation:floatUp 2.8s linear forwards;
-}
-
-@keyframes floatUp{
-  to{transform:translateY(-110vh);opacity:0}
-  }
-.gif-box{
-  height:160px;   /* sweet spot for mobile */
-}
-/* Make gifts page scroll vertically */
-.gifts-vertical{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-/* Each gift full-width */
-.gifts-vertical .gift{
-  width:100%;
-}
-
-/* Allow scrolling inside container */
-.scrollable{
-  overflow-y:auto;
-  padding-bottom:70px; /* space for return button */
-}
-
-/* Return button pinned at bottom */
-.return-fixed{
-  position:sticky;
-  bottom:0;
-  margin-top:16px;
-}
-.gift-gif{
-  width:100%;
-  height:140px;        /* ⬅️ increase height */
-  border-radius:14px;
-  overflow:hidden;
-  background:#ffffffaa;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.gift-gif img{
-  width:100%;
-  height:100%;
-  object-fit: cover;   /* 🔥 KEY CHANGE */
-  display:block;
-}
-.gift-text{
-  font-size:16px;
-  line-height:1.5;
-  text-align:center;
-  color:#044;
-  max-width:90%;
-}
-.gift-text{
-  font-size:16px;
-  line-height:1.6;
-  text-align:center;
-  color:#044;
-  max-width:90%;
-  list-style:none;
-  padding:0;
-  margin:0 auto;
-}
-/* SLIDER */
-/* SLIDER WRAPPER */
-.slider{
-  width:100%;
-  height:220px;
-  overflow:hidden;
-  border-radius:16px;
-  position:relative;
-}
-
-/* SLIDES CONTAINER */
-.slides{
-  display:flex;
-  width:400%;              /* 👈 4 slides */
-  height:100%;
-  transition: transform 0.35s ease;
-}
-
-/* EACH SLIDE */
-.slide{
-  width:100%;
-  flex-shrink:0;           /* 👈 VERY IMPORTANT */
-  height:100%;
-}
-
-/* IMAGE FIT */
-.slide img{
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  display:block;
-}
-
-
-/* DOTS */
-.dots{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin-top:8px;
-}
-
-.dots span{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#bbb;
-}
-
-.dots span.active{
-  background:#26a69a;
-}
-/* HORIZONTAL SCROLL CONTAINER */
-.marvel-scroll{
-  width:100%;
-  height:220px;
-  display:flex;
-  gap:12px;
-  overflow-x:auto;              /* 👈 enables horizontal scroll */
-  overflow-y:hidden;
-  scroll-snap-type:x mandatory; /* 👈 snap effect */
-  -webkit-overflow-scrolling:touch;
-  border-radius:16px;
-}
-
-/* EACH ITEM */
-.marvel-item{
-  flex:0 0 100%;                /* 👈 one full screen per item */
-  height:100%;
-  scroll-snap-align:center;
-  border-radius:16px;
-  overflow:hidden;
-  background:#00000010;
-}
-
-/* IMAGE FIT */
-.marvel-item img{
-  width:100%;
-  height:100%;
-  object-fit:contain;             /* fills nicely */
-  display:block;
-}
-
-/* hide scrollbar (mobile friendly) */
-.marvel-scroll::-webkit-scrollbar{
-  display:none;
-}
-/* VERTICAL SCROLL CONTAINER */
-.marvel-vertical{
-  width:100%;
-  max-height:260px;        /* controls visible area */
-  overflow-y:auto;         /* 👈 vertical scrolling */
-  overflow-x:hidden;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  padding-right:4px;
-  border-radius:16px;
-  background:#00000010;
-}
-
-/* EACH GIF ITEM */
-.marvel-item{
-  width:100%;
-  height:180px;            /* each GIF height */
-  border-radius:14px;
-  overflow:hidden;
-  background:#ffffffaa;
-}
-
-/* GIF FIT */
-.marvel-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;        /* fills nicely */
-  display:block;
-}
-
-/* Hide scrollbar (mobile) */
-.marvel-vertical::-webkit-scrollbar{
-  width:0;
-}
-/* OUTER SWIPE CONTAINER */
-.marvel-swipe{
-  width:100%;
-  height:220px;
-  display:flex;
-  overflow-x:auto;                /* 👈 horizontal scroll */
-  overflow-y:hidden;
-  scroll-snap-type:x mandatory;   /* 👈 snap one-by-one */
-  -webkit-overflow-scrolling:touch;
-  border-radius:16px;
-  background:#00000010;
-}
-
-/* EACH SLIDE (ONE FULL SCREEN) */
-.marvel-slide{
-  flex:0 0 100%;                  /* 👈 ONLY ONE GIF VISIBLE */
-  height:100%;
-  scroll-snap-align:start;
-  overflow:hidden;
-}
-
-/* GIF FIT */
-.marvel-slide img{
-  width:100%;
-  height:100%;
-  object-fit:cover;               /* fills nicely */
-  display:block;
-}
-
-/* HIDE SCROLLBAR */
-.marvel-swipe::-webkit-scrollbar{
-  display:none;
-}
-/* MAIN DIALOG BOX */
-.dialog{
-  width:92%;
-  max-height:85vh;          /* 👈 fits mobile screen */
-  margin:auto;
-  padding:16px;
-  border-radius:20px;
-  background:linear-gradient(135deg,#7bdcb5,#4dd0e1,#81d4fa);
-  display:flex;
-  flex-direction:column;
-}
-
-/* SCROLLABLE AREA */
-.dialog-content{
-  flex:1;                   /* 👈 takes remaining space */
-  overflow-y:auto;          /* 👈 ENABLES SCROLL */
-  overflow-x:hidden;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  padding-right:4px;
-}
-
-/* HIDE SCROLLBAR (mobile) */
-.dialog-content::-webkit-scrollbar{
-  width:0;
-}
-
-/* GIFT CARD */
-.gift{
-  background:#ffffffcc;
-  padding:10px;
-  border-radius:16px;
-}
+/* buttons */
 .buttons{
   display:flex;
   justify-content:center;
@@ -443,23 +53,47 @@ button:active{transform:scale(.96)}
   flex-wrap:wrap;
 }
 
+button, .next-square, .small-btn{
+  padding:12px 18px;
+  border:none;
+  border-radius:14px;
+  font-size:15px;
+  cursor:pointer;
+}
+
 .yes{
-  max-width:85%;
+  background:#26a69a;
+  color:white;
   transition:transform 0.25s ease;
 }
 
 .no{
-  flex-shrink:0;
-}
-.container,
-.dialog{
-  position: relative;
-  z-index: 2;
+  background:#ef5350;
+  color:white;
 }
 
+.next-square{
+  background:#4dd0e1;
+  color:white;
+  margin-top:10px;
+}
+
+.small-btn{
+  background:#26a69a;
+  color:white;
+  margin-top:14px;
+}
+
+/* hearts */
 .heart{
-  position: fixed;
-  z-index: 1;     /* 👈 MUST be lower than UI */
-  pointer-events: none;
+  position:fixed;
+  bottom:0;
+  font-size:20px;
+  animation:floatUp 3s linear forwards;
+  pointer-events:none;
 }
 
+@keyframes floatUp{
+  from{ transform:translateY(0); opacity:1; }
+  to{ transform:translateY(-120vh); opacity:0; }
+}
