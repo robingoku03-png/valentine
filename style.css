@@ -97,3 +97,29 @@ button, .next-square, .small-btn{
   from{ transform:translateY(0); opacity:1; }
   to{ transform:translateY(-120vh); opacity:0; }
 }
+/* GIFT PAGE CONTAINER */
+.container{
+  max-height:90vh;           /* 👈 fit mobile screen */
+  display:flex;
+  flex-direction:column;
+}
+
+/* SCROLLABLE CONTENT INSIDE GIFT */
+.container .sub,
+.container .gift-text,
+.container .bouquet-text{
+  overflow-y:auto;
+}
+
+/* UNIVERSAL SCROLL AREA FOR TEXT GIF PAGES */
+.scroll-area{
+  flex:1;                    /* 👈 takes remaining space */
+  overflow-y:auto;           /* 👈 vertical scroll */
+  overflow-x:hidden;
+  padding-right:6px;
+}
+
+/* Hide scrollbar (mobile clean look) */
+.scroll-area::-webkit-scrollbar{
+  width:0;
+}
