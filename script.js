@@ -313,15 +313,5 @@ function initSlider(){
 
   update();
 }
-const app = document.getElementById("app");
+home();
 
-app.innerHTML = `
-  <div style="
-    color:black;
-    background:white;
-    padding:20px;
-    font-size:20px;
-  ">
-    TEST PAGE LOADED ✅
-  </div>
-`;
