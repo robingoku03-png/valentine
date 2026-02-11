@@ -75,7 +75,12 @@ function valentine(){
     </div>
   </div>`;
 
-  const yes = document.getElementById("yesBtn");
+  // YES should ALWAYS go to next page
+yes.addEventListener("click", function(e){
+  e.stopPropagation();   // prevents accidental triggers
+  truck();               // go to next page ONLY when tapped
+});
+
   const no  = document.getElementById("noBtn");
 
   function growYes(){
