@@ -121,10 +121,11 @@ function truck(){
 
 function gifts(){
   app.innerHTML=`
-  <div class="container scrollable">
+  <div class="dialog">
     <h2>Gifts for you my love🥰</h2>
 
-    <div class="gifts-vertical">
+    <!-- SCROLLABLE CONTENT -->
+    <div class="dialog-content">
 
       <div class="gift" onclick="gift1()">
         <div class="gift-gif">
@@ -159,9 +160,7 @@ function gifts(){
 
     </div>
 
-    <button class="small-btn return-fixed" onclick="truck()">
-      Return
-    </button>
+    <button class="small-btn" onclick="truck()">Return</button>
   </div>`;
 }
 
