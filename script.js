@@ -57,14 +57,17 @@ function goodGirl(){
 /* ---------- VALENTINE ---------- */
 
 function valentine(){
-  yesScale = 1;
-  teaseIndex = 0;
+  let yesScale = 1;
+  let teaseIndex = 0;
 
   app.innerHTML = `
   <div class="container">
     <h2>Will you be my forever Valentine?😣🩵💚</h2>
-    <p class="sub">i promise many things😭 refer dm that's all ture tho😭🙏🏻
+
+    <p class="sub">
+      i promise many things😭 refer dm that's all ture tho😭🙏🏻
     </p>
+
     <div class="gif-box">
       <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDRwZGJ0NGt5eTM5eXZ3Y3h0eDZjaTMxeDJpeng5czV6ZHh4eHUydCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JSxzmyV7AqeABDQKed/giphy.gif">
     </div>
@@ -75,17 +78,18 @@ function valentine(){
     </div>
   </div>`;
 
-  // YES should ALWAYS go to next page
-yes.addEventListener("click", function(e){
-  e.stopPropagation();   // prevents accidental triggers
-  truck();               // go to next page ONLY when tapped
-});
-
+  const yes = document.getElementById("yesBtn");
   const no  = document.getElementById("noBtn");
 
+  /* YES → always goes next page */
+  yes.addEventListener("click", function(e){
+    e.stopPropagation();
+    truck();
+  });
+
+  /* NO → only grows YES */
   function growYes(){
-    // grow YES but keep it safe
-    yesScale = Math.min(yesScale + 0.12, 1.9);
+    yesScale = Math.min(yesScale + 0.12, 1.9); // SAFE LIMIT
     yes.style.transform = `scale(${yesScale})`;
 
     teaseIndex++;
@@ -93,12 +97,16 @@ yes.addEventListener("click", function(e){
 
     hearts("yes", 2);
 
-    // remove NO at the end
+    // FINAL STATE
     if(yesScale >= 1.9){
-      no.style.display = "none";
-      yes.style.margin = "auto";
+      no.style.display = "none";   // remove NO
+      yes.style.margin = "auto";   // center YES
     }
   }
+
+  no.addEventListener("click", growYes);
+  no.addEventListener("touchstart", growYes);
+}
 
   // NO only grows YES
   no.addEventListener("touchstart", growYes);
