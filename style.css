@@ -417,3 +417,18 @@ button:active{transform:scale(.96)}
   padding:10px;
   border-radius:16px;
 }
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+}
+
+.yes{
+  max-width:85%;
+  transition:transform 0.25s ease;
+  will-change:transform;
+}
+
+.no{
+  flex-shrink:0;
+}
