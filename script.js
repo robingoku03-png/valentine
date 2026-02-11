@@ -66,10 +66,11 @@ function valentine(){
     <p class="sub">i promise many things😭 refer dm that's all ture tho😭🙏🏻
     </p>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDRwZGJ0NGt5eTM5eXZ3Y3h0eDZjaTMxeDJpeng5czV6ZHh4eHUydCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JSxzmyV7AqeABDQKed/giphy.gif" alt="forever valentine gif">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDRwZGJ0NGt5eTM5eXZ3Y3h0eDZjaTMxeDJpeng5czV6ZHh4eHUydCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JSxzmyV7AqeABDQKed/giphy.gif">
     </div>
+
     <div class="buttons">
-      <button class="yes" id="yesBtn" onclick="truck()">Yes, forever 💘</button>
+      <button class="yes" id="yesBtn">Yes, forever 💘</button>
       <button class="no" id="noBtn">Noooo 😅</button>
     </div>
   </div>`;
@@ -77,27 +78,38 @@ function valentine(){
   const yes = document.getElementById("yesBtn");
   const no  = document.getElementById("noBtn");
 
-  function grow(){
-    // grow YES but keep it INSIDE screen
-    yesScale = Math.min(yesScale + 0.12, 2.2);   // 👈 SAFE LIMIT
+  let locked = false;   // prevents auto-trigger
+
+  function growYes(){
+    if(locked) return;
+
+    // YES grows but NEVER beyond safe size
+    yesScale = Math.min(yesScale + 0.12, 1.9);
     yes.style.transform = `scale(${yesScale})`;
 
-    // tease text
     teaseIndex++;
     no.innerText = teaseTexts[teaseIndex % teaseTexts.length];
 
-    hearts("yes",2);
+    hearts("yes", 2);
 
     // FINAL STATE
-    if(yesScale >= 2.2){
-      no.style.display = "none";     // remove NO
-      yes.style.display = "block";
-      yes.style.margin = "auto";     // center YES
+    if(yesScale >= 1.9){
+      locked = true;            // stop growth
+      no.style.display = "none";
+      yes.style.margin = "auto";
     }
   }
 
-  no.addEventListener("touchstart", grow);
-  no.addEventListener("mouseenter", grow);
+  // ONLY NO triggers growth
+  no.addEventListener("touchstart", growYes);
+  no.addEventListener("click", growYes);
+
+  // YES ONLY WORKS WHEN USER TAPS IT
+  yes.addEventListener("click", ()=>{
+    if(locked){
+      truck();
+    }
+  });
 }
 
 /* ---------- HOW DARE ---------- */
