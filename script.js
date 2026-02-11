@@ -26,6 +26,7 @@ function hearts(type,count=20){
 /* ---------- HOME ---------- */
 
 function home(){
+  document.body.className = "";   // reset overlays
   app.innerHTML=`
   <div class="container">
     <h2>Oi radha! i made something for you</h2>
