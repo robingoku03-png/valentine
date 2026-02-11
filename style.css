@@ -432,4 +432,15 @@ button:active{transform:scale(.96)}
 .no{
   flex-shrink:0;
 }
+.container,
+.dialog{
+  position: relative;
+  z-index: 2;
+}
+
+.heart{
+  position: fixed;
+  z-index: 1;     /* 👈 MUST be lower than UI */
+  pointer-events: none;
+}
 
