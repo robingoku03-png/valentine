@@ -194,9 +194,9 @@ function gift1(){
 function gift2(){
   hearts("yes",20);
   app.innerHTML=`
-  <div class="container">
+  <div class="page-scroll">
     <h2>Garden for you 💐</h2>
-    <div class="gif-box">
+    <div class="page-scroll">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzQwZDhtdHN5YXlicTBhcHA2ejI2cTAyNGcycGY4MTluaHd4d2ZyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aSYON5u8MGpjs4Llrw/giphy.gif" alt="bouquet for you gif">
     </div>
     <p class="bouquet-text">
@@ -211,7 +211,7 @@ function gift2(){
 function gift3(){
   hearts("yes",20);
   app.innerHTML=`
-  <div class="container">
+  <div class="page-scroll">
     <h2>I’M YOUR GIFT (^///^)</h2>
 
     <div class="gif-box">
