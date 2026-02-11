@@ -383,3 +383,37 @@ button:active{transform:scale(.96)}
 .marvel-swipe::-webkit-scrollbar{
   display:none;
 }
+/* MAIN DIALOG BOX */
+.dialog{
+  width:92%;
+  max-height:85vh;          /* 👈 fits mobile screen */
+  margin:auto;
+  padding:16px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#7bdcb5,#4dd0e1,#81d4fa);
+  display:flex;
+  flex-direction:column;
+}
+
+/* SCROLLABLE AREA */
+.dialog-content{
+  flex:1;                   /* 👈 takes remaining space */
+  overflow-y:auto;          /* 👈 ENABLES SCROLL */
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding-right:4px;
+}
+
+/* HIDE SCROLLBAR (mobile) */
+.dialog-content::-webkit-scrollbar{
+  width:0;
+}
+
+/* GIFT CARD */
+.gift{
+  background:#ffffffcc;
+  padding:10px;
+  border-radius:16px;
+}
