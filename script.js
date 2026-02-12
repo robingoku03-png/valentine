@@ -245,9 +245,9 @@ function gift2(){
 function gift3(){
   hearts("yes",20);
   app.innerHTML=`
-  <div class="page-scroll">
+  <div class="container fade-page">
     <h2>I’M YOUR GIFT (^///^)</h2>
-
+    <p class="sub">yeahh you heard it right jajajajaja</p>
     <div class="gif-box">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWgyeWJhc3dscnN4aGJmYjVmaXZscWpmcnkzd3ZrNXdkN3Vxejk0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wrBURfbZmqqXu/giphy.gif">
     </div>
@@ -264,9 +264,13 @@ function gift3(){
       I can’t wrap myself in paper,<br>
       or tie a ribbon around my heart,<br>
       or place a bow on my feelings.<br>
-      But I can promise you this, I’ll be there, I’ll keep showing up for you every single day.
+      But I can promise you this, I’ll be there :) I’ll keep showing up for you every single day.
      </p>
-    <button class="small-btn" onclick="gifts()">Return</button>
+    <!-- STICKY RETURN -->
+    <div class="sticky-footer">
+      <button class="small-btn" onclick="gifts()">Return</button>
+    </div>
+
   </div>`;
 }
 
