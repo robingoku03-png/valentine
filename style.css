@@ -1,144 +1,168 @@
+/* ================== GLOBAL ================== */
 *{
-  box-sizing:border-box;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
+  margin: 0;
+  min-height: 100vh;
   background: linear-gradient(135deg,#4dd0e1,#81d4fa,#7bdcb5);
-  display:flex;
-  justify-content:center;
-  align-items:center;
 }
 
+/* ================== APP WRAPPER ================== */
 #app{
-  width:100%;
-  max-width:420px;
-  padding:16px;
+  width: 100%;
+  max-width: 420px;
+  padding: 16px;
+  margin: 0 auto;                 /* center horizontally */
 }
 
-/* layout */
-.container{
-  background:white;
-  border-radius:20px;
-  padding:20px;
-  text-align:center;
+/* ================== MAIN CONTAINER ================== */
+.container,
+.dialog{
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+
+  max-height: 90vh;               /* fit mobile screen */
+  display: flex;
+  flex-direction: column;
 }
 
-.sub{
-  font-size:14px;
-  margin-bottom:10px;
-}
-
-.gif-box{
-  width:100%;
-  height:180px;
-  border-radius:16px;
-  overflow:hidden;
-  margin:12px 0;
-}
-
-.gif-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* buttons */
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-button, .next-square, .small-btn{
-  padding:12px 18px;
-  border:none;
-  border-radius:14px;
-  font-size:15px;
-  cursor:pointer;
-}
-
-.yes{
-  background:#26a69a;
-  color:white;
-  transition:transform 0.25s ease;
-}
-
-.no{
-  background:#ef5350;
-  color:white;
-}
-
-.next-square{
-  background:#4dd0e1;
-  color:white;
-  margin-top:10px;
-}
-
-.small-btn{
-  background:#26a69a;
-  color:white;
-  margin-top:14px;
-}
-
-/* hearts */
-.heart{
-  position:fixed;
-  bottom:0;
-  font-size:20px;
-  animation:floatUp 3s linear forwards;
-  pointer-events:none;
-}
-
-@keyframes floatUp{
-  from{ transform:translateY(0); opacity:1; }
-  to{ transform:translateY(-120vh); opacity:0; }
-}
-/* GIFT PAGE CONTAINER */
-.container{
-  max-height:90vh;           /* 👈 fit mobile screen */
-  display:flex;
-  flex-direction:column;
-}
-
-/* SCROLLABLE CONTENT INSIDE GIFT */
-.container .sub,
-.container .gift-text,
-.container .bouquet-text{
-  overflow-y:auto;
-}
-
-/* UNIVERSAL SCROLL AREA FOR TEXT GIF PAGES */
-.scroll-area{
-  flex:1;                    /* 👈 takes remaining space */
-  overflow-y:auto;           /* 👈 vertical scroll */
-  overflow-x:hidden;
-  padding-right:6px;
+/* ================== SCROLLABLE CONTENT ================== */
+.page-scroll,
+.dialog-content{
+  flex: 1;                        /* take remaining space */
+  overflow-y: auto;               /* ENABLE SCROLL */
+  overflow-x: hidden;
+  padding-right: 6px;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Hide scrollbar (mobile clean look) */
-.scroll-area::-webkit-scrollbar{
-  width:0;
-}
-/* FORCE PAGE TO FIT SCREEN */
-.container{
-  height:100vh;                 /* 👈 lock to screen */
-  display:flex;
-  flex-direction:column;
+.page-scroll::-webkit-scrollbar,
+.dialog-content::-webkit-scrollbar{
+  width: 0;
 }
 
-/* SCROLLABLE CONTENT AREA */
-.page-scroll{
-  flex:1;                       /* 👈 takes free space */
-  overflow-y:auto;              /* 👈 ENABLE SCROLL */
-  overflow-x:hidden;
-  padding-right:8px;
+/* ================== TEXT ================== */
+.sub{
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-/* hide scrollbar (mobile) */
-.page-scroll::-webkit-scrollbar{
-  width:0;
+.gift-text,
+.bouquet-text{
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ================== GIF BOX ================== */
+.gif-box{
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.gif-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================== GIFS & IMAGES ================== */
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ================== GIFT CARDS ================== */
+.gift{
+  width: 100%;
+  padding: 10px;
+}
+
+.gift-title{
+  margin-top: 6px;
+  font-weight: bold;
+}
+
+/* ================== BUTTONS ================== */
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+button,
+.next-square,
+.small-btn{
+  padding: 12px 18px;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.yes{
+  background: #26a69a;
+  color: white;
+  transition: transform 0.25s ease;
+}
+
+.no{
+  background: #ef5350;
+  color: white;
+}
+
+.next-square{
+  background: #4dd0e1;
+  color: white;
+  margin-top: 10px;
+}
+
+.small-btn{
+  background: #26a69a;
+  color: white;
+  margin-top: 14px;
+}
+
+/* ================== HEART ANIMATION ================== */
+.heart{
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: floatUp 3s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp{
+  from{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to{
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* ================== MARVEL SWIPE ================== */
+.marvel-swipe{
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.marvel-slide{
+  min-width: 100%;
+  scroll-snap-align: center;
 }
