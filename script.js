@@ -251,7 +251,8 @@ function gift3(){
     <div class="gif-box">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWgyeWJhc3dscnN4aGJmYjVmaXZscWpmcnkzd3ZrNXdkN3Vxejk0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wrBURfbZmqqXu/giphy.gif">
     </div>
-
+    <!-- SCROLLABLE TEXT -->
+    <div class="page-scroll">
     <p class="gift-text">
       i know it might sound a little silly,<br>
       but I’m the gift I wanna give you.<br>
@@ -265,7 +266,8 @@ function gift3(){
       or tie a ribbon around my heart,<br>
       or place a bow on my feelings.<br>
       But I can promise you this, I’ll be there :) I’ll keep showing up for you every single day.
-     </p>
+    </p>
+    </div>
     <!-- STICKY RETURN -->
     <div class="sticky-footer">
       <button class="small-btn" onclick="gifts()">Return</button>
