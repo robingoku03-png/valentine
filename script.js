@@ -22,6 +22,16 @@ function hearts(type,count=15){
     setTimeout(()=>h.remove(),3000);
   }
 }
+function brokenHearts(count = 6){
+  for(let i = 0; i < count; i++){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "💔";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+  }
+}
 
 /* ---------- HOME ---------- */
 
@@ -70,7 +80,7 @@ function valentine(){
     </div>
 
     <div class="buttons">
-      <button class="yes" id="yesBtn">Yes 💘</button>
+      <button class="yes" id="yesBtn">Yessss 💘</button>
       <button class="no" id="noBtn">Noooo 😅</button>
     </div>
   </div>`;
@@ -81,18 +91,20 @@ function valentine(){
   yes.addEventListener("click",truck);
 
   function growYes(){
-    yesScale=Math.min(yesScale+0.12,1.9);
-    yes.style.transform=`scale(${yesScale})`;
+  yesScale = Math.min(yesScale + 0.12, 1.9);
+  yes.style.transform = `scale(${yesScale})`;
 
-    teaseIndex++;
-    no.innerText=teaseTexts[teaseIndex%teaseTexts.length];
-    hearts("yes",2);
+  teaseIndex++;
+  no.innerText = teaseTexts[teaseIndex % teaseTexts.length];
 
-    if(yesScale>=1.9){
-      no.style.display="none";
-      yes.style.margin="auto";
-    }
+  brokenHearts(6);   // 💔💔💔 instead of ❤️
+
+  if(yesScale >= 1.9){
+    no.style.display = "none";
+    yes.style.margin = "auto";
   }
+}
+
 
   no.addEventListener("click",growYes);
   no.addEventListener("touchstart",growYes);
