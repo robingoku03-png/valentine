@@ -299,6 +299,21 @@ function gift4(){
       <div class="marvel-slide">
         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWJpcnU0bGs4ejl1emFkZnRjem00MndiM3ltNmUyM3B0a2RobWQzcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mmPgxbuPiwCQg/giphy.gif" alt="us marvel 4">
       </div>
+      <div class="marvel-slide">
+         <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXNzMnlocGt2N3dwOW55ODh2djlic3R5NzdkOXBiYmdocWJ0cjhleCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aoWVd54eAoZby/giphy.gif" alt="us marvel 5">
+      </div>
+      <div class="marvel-slide">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3ZybXNncGxtb3RxMDRlcmpmeXQwN3cxam9uOTF5b2RodGZoaXN6OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/s0UqJX0nvBQs/giphy.gif" alt="us marvel 6">
+      </div>
+      <div class="marvel-slide">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzJmZjI5aXYzcDhuejhnN20ycTdnMmJ3cTNwZmdpemd3ZnVuMXkyMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10wwy1cJ8j2aD6/giphy.gif" alt="us marvel 7">
+      </div>
+      <div class="marvel-slide">
+        <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YTJiMGZ2aWo2MjJuZG82Z3BweWIzd3V3dGg0YWQ5OXpkZXQxMjV3eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h7YzwPbbdYTFqqcklv/giphy.gif" alt="us marvel 8">
+      </div>
+      <div class="marvel-slide">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmRoNXNxYm1sNWh4czZtZnVnaWxnazRmdHZjaW9md3cxcGk0djZuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cuOr6KYcx1dCg/giphy.gif" alt="us marvel 8">
+      </div>
     </div>
 
 
