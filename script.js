@@ -4,12 +4,12 @@ let yesScale = 1;
 let teaseIndex = 0;
 
 const teaseTexts = [
-  "Noooo 😅",
-  "Why babe 🥺",
-  "We’d be a good combo 💕",
+  "Nice try but nope! 😭",
+  "Why babe 💀💀",
+  "You’re clicking the wrong one 🙄",
   "Are you serious?? 💔",
   "That’s kinda mean 😭",
-  "Okay now you are pissing me😒"
+  "Error 404: 'No' not found😜"
 ];
 
 function hearts(type,count=15){
@@ -28,8 +28,8 @@ function hearts(type,count=15){
 function home(){
   app.innerHTML=`
   <div class="container">
-    <h2>Oi radha! i made something for you</h2>
-    <p class="sub">you wanna see??</p>
+    <h2>Oi radha!(●'◡'●) i made something special for you</h2>
+    <p class="sub">wanna see what's inside? I promise you won't regret it!😏</p>
     <div class="gif-box">
       <img src="https://media.giphy.com/media/10Vrg2NcFDoe2Y/giphy.gif">
     </div>
@@ -47,6 +47,7 @@ function goodGirl(){
   app.innerHTML=`
   <div class="container">
     <h2>That's my goodgirl 😆💕</h2>
+    <p class="sub">*virtual hugsss🫂*</p>
     <div class="gif-box">
       <img src="https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif">
     </div>
@@ -62,15 +63,14 @@ function valentine(){
 
   app.innerHTML=`
   <div class="container">
-    <h2>Will you be my forever Valentine?😣🩵💚</h2>
-    <p class="sub">i promise many things😭 refer dm that's all ture tho😭🙏🏻</p>
-
+    <h2>Will you be my Valentine?😣🩵💚</h2>
+    <p class="sub">Making a lot of promises over here 😭, check your DMs for clarification(Respectfully ofc!). It's all facts, I swear! 😽✨</p>
     <div class="gif-box">
       <img src="https://media.giphy.com/media/JSxzmyV7AqeABDQKed/giphy.gif">
     </div>
 
     <div class="buttons">
-      <button class="yes" id="yesBtn">Yes, forever 💘</button>
+      <button class="yes" id="yesBtn">Yes 💘</button>
       <button class="no" id="noBtn">Noooo 😅</button>
     </div>
   </div>`;
@@ -118,7 +118,7 @@ function truck(){
   hearts("yes",20);
   app.innerHTML=`
   <div class="container">
-    <h2>HAVING SOMETHING SPECIAL FOR YOU💝</h2>
+    <h2>GOT A LITTLE SOMETHING SPECIAL FOR YOU AHEAD💝</h2>
     <div class="gif-box">
       <img src="https://media.giphy.com/media/1wmOyZYoGzz003R03Y/giphy.gif">
     </div>
@@ -132,7 +132,7 @@ function truck(){
 function gifts(){
   app.innerHTML=`
   <div class="dialog">
-    <h2>Gifts for you my love🥰</h2>
+    <h2>GIFTS FOR YOU MY LOVE🥰</h2>
 
     <!-- SCROLLABLE CONTENT -->
     <div class="dialog-content">
@@ -179,31 +179,53 @@ function gifts(){
 
 function gift1(){
   hearts("yes",20);
-  app.innerHTML=`
-  <div class="container">
-    <h2>Words from my soul(*/ω＼*)</h2>
-    <p class="sub">
-      Nānu ninnannu prītisuttēne you could ever imagine, i don't wanna lie that my life was bad before you come into my life kinda things, my life was good and you made it better. My day starts and ends with you ☆*: .｡. o(≧▽≦)o .｡.:*☆. I am lucky that i found you in my life among 8.3 billion people. Ik you recieved things which you doesn't deserve any of it, but I wanna give the things and care which you deserve, and don't say about your problem baggage, lemme carry it till the end no matter what. We talked about this manytimes in dm, so yeah wtv helps me sleep at night..blehhhhhh╰(*°▽°*)╯💖
-    </p>
-    <button class="small-btn" onclick="gifts()">Return</button>
+  app.innerHTML = `
+  <div class="container fade-page">
+
+    <h2>Words from my soul (*/ω＼*)</h2>
+
+    <!-- GIF UNDER TITLE -->
+    <div class="gif-box">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHJpenBob3F4cHV0YTk3bWY2N25qNDY4andoM3BsOTdrMXlmcjE1byZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="love gif">
+    </div>
+
+    <!-- SCROLLABLE TEXT -->
+    <div class="page-scroll">
+      <p class="sub">
+        Nānu ninnannu prītisuttēne you could ever imagine, i don't wanna lie that my life was bad before you come into my life kinda things, my life was good and you made it better. My day starts and ends with you ☆*: .｡. o(≧▽≦)o .｡.:*☆. I am lucky that i found you in my life among 8.3 billion people. Ik you recieved things which you doesn't deserve any of it, but I wanna give the things and care which you deserve, and don't say about your problem baggage, lemme carry it till the end no matter what. I ain't wanna date you for time pass or like for a year or wtv, i js wanna spend our time together til the end of our life. We have already talked about this manytimes in dm, so yeah wtv helps me sleep at night..blehhhhhh╰(*°▽°*)╯💖
+      </p>
+    </div>
+
+    <!-- STICKY RETURN -->
+    <div class="sticky-footer">
+      <button class="small-btn" onclick="gifts()">Return</button>
+    </div>
+
   </div>`;
 }
+
 
 /* ---------- GIFT 2 ---------- */
 
 function gift2(){
   hearts("yes",20);
   app.innerHTML=`
-  <div class="page-scroll">
+  <div class="container fade-page">
     <h2>Garden for you 💐</h2>
-    <div class="page-scroll">
+    <div class="gif-box">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzQwZDhtdHN5YXlicTBhcHA2ejI2cTAyNGcycGY4MTluaHd4d2ZyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aSYON5u8MGpjs4Llrw/giphy.gif" alt="bouquet for you gif">
     </div>
-    <p class="bouquet-text">
-      Honestly, if I were there with you irl i would have probably just smiled and gifted a bouquet, not saying much cuz some things don't need big words🥰. But since I'm not there rn I had to do it differently. One bouquet didn't feel enough anyway so I just kept planting more flowers in my head until it grew into something way bigger. So yeah instead of a bouquet, I'm giving you a whole garden now 😆💐 as you like roses, dw i will buy lilies when we meet.
-    </p>
+    <!-- SCROLLABLE TEXT -->
+    <div class="page-scroll">
+      <p class="bouquet-text">
+        Honestly, if I were there with you irl I would have probably just smiled and gifted a bouquet, not saying much cuz some things don't need big words🥰.However since I’m not exactly there rn, I had to do it differently tho. The problem was that one bouquet just wouldn’t seem fitting anyway, it just seemed too small considering how much I've been thinking of you. So I just started planting more flowers in my head and before I knew it, I had something a lot bigger like boom. So instead of the bouquet, I'm now giving you the garden👨🏻‍🌾🏡 ??????.It kinda reminds me of Doctor Strange in the Multiverse of Madness lol. "I love you in every universe." Well in every universe that I can even begin to imagine, I’m probably doing exactly this same thing, looking for ways to show how special you are, even if I have to create a whole garden in my imagination. As you like roses🌹 this imaginary garden is currently at peak bloom solely for your pleasure🪷, but dw I haven't forgotten the real thing. I'm holding the lilies🪻 for the exact moment we shall finally meet💐✨
+      </p>
+    </div>
+    <!-- STICKY RETURN -->
+    <div class="sticky-footer">
+      <button class="small-btn" onclick="gifts()">Return</button>
+    </div>
 
-    <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
 }
 
