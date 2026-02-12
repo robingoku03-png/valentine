@@ -1,49 +1,53 @@
-/* ================== GLOBAL ================== */
+/* ================== RESET ================== */
 *{
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
-body{
+html, body{
   margin: 0;
-  min-height: 100vh;
+  padding: 0;
+  height: 100%;
+}
+
+/* ================== BODY ================== */
+body{
   background: linear-gradient(135deg,#4dd0e1,#81d4fa,#7bdcb5);
 }
 
-/* ================== APP WRAPPER ================== */
+/* ================== APP ROOT ================== */
 #app{
   width: 100%;
   max-width: 420px;
   padding: 16px;
-  margin: 0 auto;                 /* center horizontally */
+  margin: 0 auto;
+
+  min-height: 100svh;        /* full mobile height */
+  display: flex;
 }
 
-/* ================== MAIN CONTAINER ================== */
-..container,
+/* ================== MAIN CONTAINERS ================== */
+.container,
 .dialog{
   background: white;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
 
-  min-height: 90vh;          /* 👈 always fill screen */
-  max-height: 90vh;          /* 👈 never overflow screen */
+  flex: 1;                   /* ALWAYS full height */
   display: flex;
   flex-direction: column;
 }
 
-
 /* ================== SCROLLABLE CONTENT ================== */
 .page-scroll,
 .dialog-content{
-  flex: 1;                        /* take remaining space */
-  overflow-y: auto;               /* ENABLE SCROLL */
+  flex: 1;
+  overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 6px;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar (mobile clean look) */
 .page-scroll::-webkit-scrollbar,
 .dialog-content::-webkit-scrollbar{
   width: 0;
@@ -76,7 +80,7 @@ body{
   object-fit: cover;
 }
 
-/* ================== GIFS & IMAGES ================== */
+/* ================== ALL IMAGES ================== */
 img{
   max-width: 100%;
   height: auto;
@@ -88,11 +92,27 @@ img{
 .gift{
   width: 100%;
   padding: 10px;
+
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  animation: revealGift 0.5s ease forwards;
 }
+
+.gift:nth-child(1){ animation-delay: 0.1s; }
+.gift:nth-child(2){ animation-delay: 0.2s; }
+.gift:nth-child(3){ animation-delay: 0.3s; }
+.gift:nth-child(4){ animation-delay: 0.4s; }
 
 .gift-title{
   margin-top: 6px;
   font-weight: bold;
+}
+
+@keyframes revealGift{
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ================== BUTTONS ================== */
@@ -116,7 +136,6 @@ button,
 .yes{
   background: #26a69a;
   color: white;
-  transition: transform 0.25s ease;
 }
 
 .no{
@@ -133,10 +152,38 @@ button,
 .small-btn{
   background: #26a69a;
   color: white;
-  margin-top: 14px;
 }
 
-/* ================== HEART ANIMATION ================== */
+/* ================== STICKY RETURN ================== */
+.sticky-footer{
+  position: sticky;
+  bottom: 0;
+  margin-top: 12px;
+  padding-top: 12px;
+  background: linear-gradient(
+    to top,
+    white 60%,
+    rgba(255,255,255,0)
+  );
+}
+
+/* ================== PAGE FADE ================== */
+.fade-page{
+  animation: fadeIn 0.45s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================== HEARTS ================== */
 .heart{
   position: fixed;
   bottom: 0;
