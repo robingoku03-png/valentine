@@ -19,17 +19,19 @@ body{
 }
 
 /* ================== MAIN CONTAINER ================== */
-.container,
+..container,
 .dialog{
   background: white;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
 
-  max-height: 90vh;               /* fit mobile screen */
+  min-height: 90vh;          /* 👈 always fill screen */
+  max-height: 90vh;          /* 👈 never overflow screen */
   display: flex;
   flex-direction: column;
 }
+
 
 /* ================== SCROLLABLE CONTENT ================== */
 .page-scroll,
