@@ -215,3 +215,7 @@ button,
   min-width: 100%;
   scroll-snap-align: center;
 }
+.gif-box{
+  animation: fadeIn 0.6s ease;
+}
+
