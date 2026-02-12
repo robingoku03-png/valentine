@@ -11,7 +11,14 @@ const teaseTexts = [
   "That’s kinda mean 😭",
   "Okay now you are pissing me😒"
 ];
-
+function setVH(){
+  document.documentElement.style.setProperty(
+    '--vh',
+    `${window.innerHeight * 0.01}px`
+  );
+}
+setVH();
+window.addEventListener('resize', setVH);
 function hearts(type,count=15){
   for(let i=0;i<count;i++){
     const h=document.createElement("div");
