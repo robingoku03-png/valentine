@@ -4,15 +4,15 @@ let yesScale = 1;
 let teaseIndex = 0;
 
 const teaseTexts = [
-  "Nice try but nope! 😭",
-  "Why babe 💀💀",
-  "You’re clicking the wrong one 🙄",
+  "Noooo 😅",
+  "Why nigga 🥺",
+  "We’d be a twin 💕",
   "Are you serious?? 💔",
-  "That’s kinda mean 😭",
-  "Error 404: 'No' not found😜"
+  "That’s kinda mean bitch 😭",
+  "Okay now you are pissing me😒"
 ];
 
-function hearts(type,count=15){
+function hearts(type,count=8){
   for(let i=0;i<count;i++){
     const h=document.createElement("div");
     h.className="heart";
@@ -22,26 +22,16 @@ function hearts(type,count=15){
     setTimeout(()=>h.remove(),3000);
   }
 }
-function brokenHearts(count = 6){
-  for(let i = 0; i < count; i++){
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerText = "💔";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 3000);
-  }
-}
 
 /* ---------- HOME ---------- */
 
 function home(){
   app.innerHTML=`
   <div class="container">
-    <h2>Oi radha!(●'◡'●) i made something special for you</h2>
-    <p class="sub">wanna see what's inside? I promise you won't regret it!😏</p>
+    <h2>Fatima..😭A little gift from my hands to yours</h2>
+    <p class="sub">Care for a look??</p>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/10Vrg2NcFDoe2Y/giphy.gif">
+      <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eGxjbDAwcGZpdjhzeGhqZW52dGdmenBqcmdrZnR4b3d1MnJpZGhvayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f82EqBTeCEgcU/giphy.gif" alt="cute gif">
     </div>
     <div class="buttons">
       <button class="yes" onclick="goodGirl()">YES</button>
@@ -53,13 +43,12 @@ function home(){
 /* ---------- GOOD GIRL ---------- */
 
 function goodGirl(){
-  hearts("yes",20);
+  hearts("yes",10);
   app.innerHTML=`
   <div class="container">
     <h2>That's my goodgirl 😆💕</h2>
-    <p class="sub">*virtual hugsss🫂*</p>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzF5bmN3cmFxeGw1bjVzd2c2dGdicHFsNm9mbWs1bW16cWN0Zmg5bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1JmGiBtqTuehfYxuy9/giphy.gif" alt="good girl gif">
     </div>
     <div class="next-square" onclick="valentine()">NEXT</div>
   </div>`;
@@ -70,17 +59,16 @@ function goodGirl(){
 function valentine(){
   yesScale=1;
   teaseIndex=0;
-
   app.innerHTML=`
   <div class="container">
-    <h2>Will you be my Valentine?😣🩵💚</h2>
-    <p class="sub">Making a lot of promises over here 😭, check your DMs for clarification(Respectfully ofc!). It's all facts, I swear! 😽✨</p>
+    <h2>I want to grow old with you and look back on a lifetime of us. Will you be my person?😣🩵🖤</h2>
+    <p class="sub">Our late-night talks are filled with promises I intend to spend a lifetime keeping
+    </p>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/JSxzmyV7AqeABDQKed/giphy.gif">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm13cDNjdjVxNzFhMzg1Nnp3YWUyMXptZzRzeTVicWJ3OTVhanE5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rwIhv4q1hNerNOQS3l/giphy.gif" alt="forever valentine gif">
     </div>
-
     <div class="buttons">
-      <button class="yes" id="yesBtn">Yessss 💘</button>
+      <button class="yes" id="yesBtn" onclick="truck()">Yes, forever 💘</button>
       <button class="no" id="noBtn">Noooo 😅</button>
     </div>
   </div>`;
@@ -88,37 +76,27 @@ function valentine(){
   const yes=document.getElementById("yesBtn");
   const no=document.getElementById("noBtn");
 
-  yes.addEventListener("click",truck);
-
-  function growYes(){
-  yesScale = Math.min(yesScale + 0.12, 1.9);
-  yes.style.transform = `scale(${yesScale})`;
-
-  teaseIndex++;
-  no.innerText = teaseTexts[teaseIndex % teaseTexts.length];
-
-  brokenHearts(6);   // 💔💔💔 instead of ❤️
-
-  if(yesScale >= 1.9){
-    no.style.display = "none";
-    yes.style.margin = "auto";
+  function grow(){
+    yesScale+=0.12;
+    yes.style.transform=`scale(${yesScale})`;
+    no.innerText=teaseTexts[++teaseIndex % teaseTexts.length];
+    hearts("yes",2);
+    if(yesScale>1.8){ no.style.display="none"; }
   }
-}
 
-
-  no.addEventListener("click",growYes);
-  no.addEventListener("touchstart",growYes);
+  no.addEventListener("touchstart",grow);
+  no.addEventListener("mouseenter",grow);
 }
 
 /* ---------- HOW DARE ---------- */
 
 function howDare(){
-  hearts("no",20);
+  hearts("no",10);
   app.innerHTML=`
   <div class="container">
-    <h2 style="color:#b71c1c">HOW DARE YOU!</h2>
+    <h2 style="color:#b71c1c">HOW DARE YOU! RETRY IT</h2>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/UsckMQeJIxpva08C9g/giphy.gif">
+      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2Q3eXE5NW5hMHRlMnMwNGZxNW90OW5hZTE3dGh3ODdmYzd1NXk2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YTzh3zw4mj1XpjjiIb/giphy.gif" alt="how dare gif">
     </div>
     <button class="small-btn" onclick="home()">TRY AGAIN</button>
   </div>`;
@@ -127,31 +105,30 @@ function howDare(){
 /* ---------- TRUCK ---------- */
 
 function truck(){
-  hearts("yes",20);
+  hearts("yes",12);
+  
   app.innerHTML=`
   <div class="container">
-    <h2>GOT A LITTLE SOMETHING SPECIAL FOR YOU AHEAD💝</h2>
+    <h2>Just a little something special, for someone special💝</h2>
     <div class="gif-box">
-      <img src="https://media.giphy.com/media/1wmOyZYoGzz003R03Y/giphy.gif">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ5amk2MHFubDNhaGRmNGFjN3ptem1wdGo0Nm90dDc3czB4eWFnMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/IglOWGsDF1sbQ2ROeK/giphy.gif" alt="truck of gifts gif">
     </div>
     <button class="small-btn" onclick="gifts()">NEXT</button>
   </div>`;
 }
 
-
 /* ---------- GIFTS PAGE ---------- */
 
 function gifts(){
   app.innerHTML=`
-  <div class="dialog">
-    <h2>GIFTS FOR YOU MY LOVE🥰</h2>
+  <div class="container scrollable">
+    <h2>A bouquet fades..so I grew you a garden instead🥰</h2>
 
-    <!-- SCROLLABLE CONTENT -->
-    <div class="dialog-content">
+    <div class="gifts-vertical">
 
       <div class="gift" onclick="gift1()">
         <div class="gift-gif">
-          <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eW9yYjdpM3J0MGZzNmVrYmx4bGd4ZHo5cmp4amVsOHB0cGptcjUyNCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/c7G6drkobIQXRJwX5v/giphy.gif" alt="gift 1 gif">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGExNjgyMHVuaXBoc2xoazl3ZmdodGdyaDNyYmp6d3pyaDIxejl2eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qFmdpUKAFZ6rMobzzu/giphy.gif" alt="gift 1 gif">
         </div>
         <div class="gift-title">Gift 1✨💍</div>
       </div>
@@ -159,7 +136,7 @@ function gifts(){
 
       <div class="gift" onclick="gift2()">
         <div class="gift-gif">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzUzYWZjeWNlN2Z1ZXNoNzF2amhjNGk4dGJsOW5yemFlaHdtbTM5MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YhFzQw0j4lPNu/giphy.gif" alt="gift 2 gif">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExemp4b2NiangwdmcxcHZuMDU1Znd0Y3FjNDJmazg3amw5M213emhvcyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vayfi2tm5eVrO/giphy.gif" alt="gift 2 gif">
         </div>
         <div class="gift-title">Gift 2🌷🌹</div>
       </div>
@@ -167,7 +144,7 @@ function gifts(){
 
       <div class="gift" onclick="gift3()">
         <div class="gift-gif">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTI1ZmY4ZGlmaGdxa2w2YnQ1N2JkNmYzaTZ3czdycDNyaHVyZzFnYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iB6I46FbLRqsLliGpI/giphy.gif" alt="gift 3 gif">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXJ5amk2MHFubDNhaGRmNGFjN3ptem1wdGo0Nm90dDc3czB4eWFnMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/02JqfIpASt0GlKQ4Zi/giphy.gif" alt="gift 3 gif">
         </div>
         <div class="gift-title">Gift 3😝</div>
       </div>
@@ -182,7 +159,9 @@ function gifts(){
 
     </div>
 
-    <button class="small-btn" onclick="truck()">Return</button>
+    <button class="small-btn return-fixed" onclick="truck()">
+      Return
+    </button>
   </div>`;
 }
 
@@ -190,89 +169,50 @@ function gifts(){
 /* ---------- GIFT 1 ---------- */
 
 function gift1(){
-  hearts("yes",20);
-  app.innerHTML = `
-  <div class="container fade-page">
-
-    <h2>Words from my soul (*/ω＼*)</h2>
-
-    <!-- GIF UNDER TITLE -->
-    <div class="gif-box">
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHJpenBob3F4cHV0YTk3bWY2N25qNDY4andoM3BsOTdrMXlmcjE1byZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="love gif">
-    </div>
-
-    <!-- SCROLLABLE TEXT -->
-    <div class="page-scroll">
-      <p class="sub">
-        Nānu ninnannu prītisuttēne you could ever imagine, i don't wanna lie that my life was bad before you come into my life kinda things, my life was good and you made it better. My day starts and ends with you ☆*: .｡. o(≧▽≦)o .｡.:*☆. I am lucky that i found you in my life among 8.3 billion people. Ik you recieved things which you doesn't deserve any of it, but I wanna give the things and care which you deserve, and don't say about your problem baggage, lemme carry it till the end no matter what. I ain't wanna date you for time pass or like for a year or wtv, i js wanna spend our time together til the end of our life. We have already talked about this manytimes in dm, so yeah wtv helps me sleep at night..blehhhhhh╰(*°▽°*)╯💖
-      </p>
-    </div>
-
-    <!-- STICKY RETURN -->
-    <div class="sticky-footer">
-      <button class="small-btn" onclick="gifts()">Return</button>
-    </div>
-
+  hearts("yes",10);
+  app.innerHTML=`
+  <div class="container">
+    <h2>Words from my soul(*/ω＼*)</h2>
+    <p class="sub">
+      I know you’re confused rn, and honestly I think your heart and mind are fighting each other 😭 But I want you to know         something genuinely… I’m not here to hurt you, I swear. I like talking to you, I like understanding you, even your             weird moods bwhahahaha and overthinking moments. And yeah i wanna be in a relationship with you.. date to marry               ofc.. And yeah… I LOVE YOU ITS NOT MESUREABLE...MWAHHHHHHHH💖
+    </p>
+    <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
 }
-
 
 /* ---------- GIFT 2 ---------- */
 
 function gift2(){
-  hearts("yes",20);
+  hearts("yes",10);
   app.innerHTML=`
-  <div class="container fade-page">
+  <div class="container">
     <h2>Garden for you 💐</h2>
     <div class="gif-box">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzQwZDhtdHN5YXlicTBhcHA2ejI2cTAyNGcycGY4MTluaHd4d2ZyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aSYON5u8MGpjs4Llrw/giphy.gif" alt="bouquet for you gif">
     </div>
-    <!-- SCROLLABLE TEXT -->
-    <div class="page-scroll">
-      <p class="bouquet-text">
-        Honestly, if I were there with you irl I would have probably just smiled and gifted a bouquet, not saying much cuz some things don't need big words🥰.However since I’m not exactly there rn, I had to do it differently tho. The problem was that one bouquet just wouldn’t seem fitting anyway, it just seemed too small considering how much I've been thinking of you. So I just started planting more flowers in my head and before I knew it, I had something a lot bigger like boom. So instead of the bouquet, I'm now giving you the garden👨🏻‍🌾🏡 ??????.It kinda reminds me of Doctor Strange in the Multiverse of Madness lol. "I love you in every universe." Well in every universe that I can even begin to imagine, I’m probably doing exactly this same thing, looking for ways to show how special you are, even if I have to create a whole garden in my imagination. As you like roses🌹 this imaginary garden is currently at peak bloom solely for your pleasure🪷, but dw I haven't forgotten the real thing. I'm holding the lilies🪻 for the exact moment we shall finally meet💐✨
-      </p>
-    </div>
-    <!-- STICKY RETURN -->
-    <div class="sticky-footer">
-      <button class="small-btn" onclick="gifts()">Return</button>
-    </div>
+    <p class="bouquet-text">
+      They say 'A rose by any other name would smell as sweet' but no flower could ever match the sweetness of you. If I were there...I’d give you a dozen roses and a kiss..and that would be enough...But from here..a dozen felt like a drop in the ocean..I’ve let my love grow into something much bigger a whole garden where every color of rose blooms at once..just for you...Every time I remember our calls and the promises I’ve made..another bud opens...It’s a garden that doesn’t wither with the seasons...Consider this my 'forever' gift until I can be there to hand deliver those roses you love..I’m showing up for you every day..tending to this garden until we can walk through it together..
+    </p>
 
+    <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
 }
 
 /* ---------- GIFT 3 ---------- */
 function gift3(){
-  hearts("yes",20);
+  hearts("yes",10);
   app.innerHTML=`
-  <div class="container fade-page">
+  <div class="container">
     <h2>I’M YOUR GIFT (^///^)</h2>
-    <p class="sub">yeahh you heard it right jajajajaja</p>
+
     <div class="gif-box">
       <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWgyeWJhc3dscnN4aGJmYjVmaXZscWpmcnkzd3ZrNXdkN3Vxejk0MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wrBURfbZmqqXu/giphy.gif">
     </div>
-    <!-- SCROLLABLE TEXT -->
-    <div class="page-scroll">
-    <p class="gift-text">
-      i know it might sound a little silly,<br>
-      but I’m the gift I wanna give you.<br>
-      not something you can unwrap,<br>
-      not something you can hold in your hands.<br>
-      It’s my time,<br>
-      my care,<br>
-      my effort,etc etc etcccc<br>
-      and all the love I carry inside me.<br>
-      I can’t wrap myself in paper,<br>
-      or tie a ribbon around my heart,<br>
-      or place a bow on my feelings.<br>
-      But I can promise you this, I’ll be there :) I’ll keep showing up for you every single day.
-    </p>
-    </div>
-    <!-- STICKY RETURN -->
-    <div class="sticky-footer">
-      <button class="small-btn" onclick="gifts()">Return</button>
-    </div>
 
+    <p class="gift-text">
+      This might feel a bit vast, but the gift I’m giving you is one that never runs out. It’s not an object that fades.. it’s my time.. my growth.. and every heartbeat of my care...It’s the promise that when things get hard.. I’ll be there..and when things are beautiful..I’ll be there too..I don't have a box big enough to hold the love I carry for you.. nor a ribbon strong enough to tie down my feelings...So instead..I’m giving you my word and my life,  commitment to keep choosing you..every single day..without fail
+     </p>
+    <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
 }
 
@@ -280,47 +220,33 @@ function gift3(){
 /* ---------- GIFT 4 ---------- */
 
 function gift4(){
-  hearts("yes",20);
+  hearts("yes",10);
   app.innerHTML=`
   <div class="container">
     <h2>Us in Every Universe 😙💫</h2>
 
-    <!-- HORIZONTAL SWIPE BOX -->
-    <div class="marvel-swipe">
-      <div class="marvel-slide">
+    <div class="slides" id="slides">
+      <div class="slide">
          <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDM3bzlmcHA5bjMwZ3p5ajZ6MDFjNDg1MnBrcHQ0Z2lobDRnZjlwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4FOettCbTXpUj6uASx/giphy.gif" alt="us marvel 1">
       </div>
-      <div class="marvel-slide">
+      <div class="slide">
         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHY2cmkzaHpmeGYzZ2E2bDdnczYyeG16MzNlamYzbWtlaXd1bGRtYSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DhByPdqgBSPUms4NIW/giphy.gif" alt="us marvel 2">
       </div>
-      <div class="marvel-slide">
+      <div class="slide">
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHB4cXdtMzEybHlyODUyMmZpczR0ZHY0cnNwamxhN2c2eW5iM2l4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vlnuSbL956RKjGYMEQ/giphy.gif" alt="us marvel 3">
       </div>
-      <div class="marvel-slide">
+      <div class="slide">
         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWJpcnU0bGs4ejl1emFkZnRjem00MndiM3ltNmUyM3B0a2RobWQzcCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/mmPgxbuPiwCQg/giphy.gif" alt="us marvel 4">
-      </div>
-      <div class="marvel-slide">
-         <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXNzMnlocGt2N3dwOW55ODh2djlic3R5NzdkOXBiYmdocWJ0cjhleCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aoWVd54eAoZby/giphy.gif" alt="us marvel 5">
-      </div>
-      <div class="marvel-slide">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3ZybXNncGxtb3RxMDRlcmpmeXQwN3cxam9uOTF5b2RodGZoaXN6OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/s0UqJX0nvBQs/giphy.gif" alt="us marvel 6">
-      </div>
-      <div class="marvel-slide">
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzJmZjI5aXYzcDhuejhnN20ycTdnMmJ3cTNwZmdpemd3ZnVuMXkyMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10wwy1cJ8j2aD6/giphy.gif" alt="us marvel 7">
-      </div>
-      <div class="marvel-slide">
-        <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YTJiMGZ2aWo2MjJuZG82Z3BweWIzd3V3dGg0YWQ5OXpkZXQxMjV3eSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h7YzwPbbdYTFqqcklv/giphy.gif" alt="us marvel 8">
-      </div>
-      <div class="marvel-slide">
-        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmRoNXNxYm1sNWh4czZtZnVnaWxnazRmdHZjaW9md3cxcGk0djZuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cuOr6KYcx1dCg/giphy.gif" alt="us marvel 8">
       </div>
     </div>
 
 
-    <p class="sub">← swipe left / right →</p>
+    <div class="dots" id="dots"></div>
 
     <button class="small-btn" onclick="gifts()">Return</button>
   </div>`;
+
+  setTimeout(initSlider, 50);
 }
 
 
@@ -366,11 +292,4 @@ function initSlider(){
   });
 
   update();
-  /* ---------- START ---------- */
-
-home();
-
-
 }
-home();
-
