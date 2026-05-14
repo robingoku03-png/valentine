@@ -1,7 +1,7 @@
 /* ================== RESET ================== */
 *{
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif; /* Slightly more modern feel */
 }
 
 html, body{
@@ -12,7 +12,9 @@ html, body{
 
 /* ================== BODY ================== */
 body{
-  background: linear-gradient(135deg,#4dd0e1,#81d4fa,#7bdcb5);
+  /* Modern Gradient using Cyan, Deep Blue, and a touch of dark tone */
+  background: linear-gradient(135deg, #00acc1, #01579b, #263238);
+  background-attachment: fixed;
 }
 
 /* ================== APP ROOT ================== */
@@ -29,14 +31,18 @@ body{
 /* ================== MAIN CONTAINERS ================== */
 .container,
 .dialog{
-  background: white;
+  /* Dark Mode Aesthetic: Black/Deep Grey background */
+  background: #121212; 
+  border: 1px solid #00e5ff; /* Cyan border glow */
   border-radius: 20px;
   padding: 20px;
   text-align: center;
+  color: #ffffff; /* White text for contrast */
 
-  flex: 1;                   /* ALWAYS full height */
+  flex: 1;                    /* ALWAYS full height */
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* ================== SCROLLABLE CONTENT ================== */
@@ -57,12 +63,14 @@ body{
 .sub{
   font-size: 14px;
   margin-bottom: 10px;
+  color: #00e5ff; /* Cyan sub-text */
 }
 
 .gift-text,
 .bouquet-text{
   font-size: 14px;
   line-height: 1.5;
+  color: #e0e0e0;
 }
 
 /* ================== GIF BOX ================== */
@@ -72,6 +80,7 @@ body{
   border-radius: 16px;
   overflow: hidden;
   margin: 12px 0;
+  border: 2px solid #00b0ff; /* Blue border */
   animation: fadeIn 0.6s ease;
 }
 
@@ -93,6 +102,10 @@ img{
 .gift{
   width: 100%;
   padding: 10px;
+  background: #1e1e1e; /* Slightly lighter black for cards */
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border-left: 4px solid #00e5ff; /* Cyan accent */
 
   opacity: 0;
   transform: translateY(20px) scale(0.96);
@@ -107,6 +120,7 @@ img{
 .gift-title{
   margin-top: 6px;
   font-weight: bold;
+  color: #00e5ff;
 }
 
 @keyframes revealGift{
@@ -131,28 +145,31 @@ button,
   border: none;
   border-radius: 14px;
   font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .yes{
-  background: #26a69a;
-  color: white;
+  background: #00e5ff; /* Vibrant Cyan */
+  color: #000;
 }
 
 .no{
-  background: #ef5350;
-  color: white;
+  background: #37474f; /* Muted Dark Blue/Grey */
+  color: #cfd8dc;
 }
 
 .next-square{
-  background: #4dd0e1;
+  background: #00b0ff; /* Bright Blue */
   color: white;
   margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0, 176, 255, 0.3);
 }
 
 .small-btn{
-  background: #26a69a;
-  color: white;
+  background: #00e5ff;
+  color: #000;
 }
 
 /* ================== STICKY RETURN ================== */
@@ -163,8 +180,8 @@ button,
   padding-top: 12px;
   background: linear-gradient(
     to top,
-    white 60%,
-    rgba(255,255,255,0)
+    #121212 60%,
+    rgba(18,18,18,0)
   );
 }
 
@@ -189,6 +206,8 @@ button,
   position: fixed;
   bottom: 0;
   font-size: 20px;
+  color: #00e5ff; /* Cyan hearts */
+  text-shadow: 0 0 10px #00e5ff;
   animation: floatUp 3s linear forwards;
   pointer-events: none;
 }
@@ -216,5 +235,3 @@ button,
   min-width: 100%;
   scroll-snap-align: center;
 }
-
-
