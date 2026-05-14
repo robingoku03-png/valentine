@@ -2,15 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valentine</title>
+  <title>A Garden For You</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Paste the CSS I gave you here for a 100% guarantee it works */
+    body {
+      background: linear-gradient(135deg, #00acc1, #01579b, #263238);
+      margin: 0;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #app {
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
+    }
+
+    .container {
+      background: #121212;
+      border: 1px solid #00e5ff;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 { color: #00e5ff; font-size: 24px; }
+    p { color: #e0e0e0; line-height: 1.6; }
+
+    .btn-next {
+      background: #00e5ff;
+      color: black;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="container fade-page">
+      <h1>For My Love 🌹</h1>
+      <p>I know it sounds a little silly, but the best gift I have to give is me—my time, my care, and a garden of roses that never withers.</p>
+      <button class="btn-next" onclick="nextStep()">Enter the Garden</button>
+    </div>
+  </div>
 
-  <!-- script MUST be last -->
-  <script src="script.js"></script>
+  <script>
+    function nextStep() {
+      alert("This is where your script logic will go!");
+    }
+  </script>
 </body>
 </html>
